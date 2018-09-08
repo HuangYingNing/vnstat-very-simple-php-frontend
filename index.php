@@ -13,7 +13,6 @@ $command_remove_all_png = "rm ".$data_path."/data/*.png";
 $output = shell_exec("$command_remove_all_png");
 
 $vnstati_cmd = "/usr/bin/vnstati";
-$iface = "eth0";
 $date = date("Y_m_d_h_i_sa");
 
 $image_sum_file_name = "data/".strval($date)."_sum.png";
@@ -26,7 +25,7 @@ echo date("Y-m-d h:i:sa")."<br/>";
 
 $command_sum = "$vnstati_cmd -s -i $iface -o ".$data_path."/$image_sum_file_name";
 $output = shell_exec("$command_sum");
-# echo $output."<br>";
+ echo $output."<br>";
 # echo  $command_sum."<br>";
 echo "<img src='$image_sum_file_name'/>";
 
